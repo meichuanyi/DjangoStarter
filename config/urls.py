@@ -32,6 +32,9 @@ urlpatterns = [
     # API认证
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-token-auth/', authtoken_view.obtain_auth_token),
+
+    # 自定义
+    path('oda/', include('apps.oda.urls')),
 ]
 
 # 接口文档 仅调试模式可用

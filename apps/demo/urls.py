@@ -1,7 +1,14 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
-from . import views
+from .viewsets import *
+
+router = DefaultRouter()
+
+router.register('demo_department', DemoDepartmentViewSet, basename='demo_department')
+
+
 
 urlpatterns = [
-    path('test_page', views.test_page),
+    path('', include(router.urls))
 ]

@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
     # 我们自己的应用
     'apps.demo',
+    'apps.oda'
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+
             ],
         },
     },
@@ -94,8 +97,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # 数据库配置
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangostarter',
+        'USER': 'root',
+        'PASSWORD': 'Dd678678,,',
+        'HOST': '192.168.2.189',
+        'PORT': 3306,
     }
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
